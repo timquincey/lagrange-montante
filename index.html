@@ -38,6 +38,7 @@
 
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
+  html{overflow-y:scroll;scrollbar-gutter:stable;}
   body{background:var(--paper);color:var(--ink);font-family:'Karla',system-ui,sans-serif;line-height:1.55;}
   h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;color:var(--ink);text-wrap:balance;margin:0;}
   p{margin:0;}
@@ -107,6 +108,8 @@
   .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
   .photo-pair figure{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/10;box-shadow:var(--shadow);}
   .photo-pair figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-size:0.8rem;font-weight:600;color:#fff;background:linear-gradient(0deg, rgba(20,16,10,0.72), rgba(20,16,10,0));}
+  .reviews-full .r-card:last-child:nth-child(odd){grid-column:1 / -1;}
+  :focus-visible{outline:2px solid var(--sky-500);outline-offset:3px;}
   /* PLACE */
   .place{padding:76px 0;border-bottom:1px solid var(--line);}
   .place .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
@@ -168,7 +171,7 @@
   .gite-layout > .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;}
   .gite-layout img{border-radius:18px;box-shadow:var(--shadow);aspect-ratio:4/3;margin-bottom:20px;height:auto;}
   .gite-copy p{color:var(--ink-soft);margin-bottom:14px;}
-  .gite-facts{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:fit-content;}
+  .gite-facts{position:sticky;top:96px;display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:fit-content;}
   .gite-facts .fact{display:flex;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);font-size:0.92rem;}
   .gite-facts .fact:last-child{border-bottom:none;}
   .gite-facts .fact span:first-child{color:var(--ink-soft);}
@@ -221,7 +224,7 @@
 
   /* ---------- REVIEWS PAGE ---------- */
   .reviews-full{padding-block:56px 72px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-  .reviews-summary{padding-block:44px;border-bottom:1px solid var(--line);display:flex;gap:40px;flex-wrap:wrap;align-items:center;}
+  .reviews-summary{padding-block:44px;display:flex;gap:40px;flex-wrap:wrap;align-items:center;}
   .rs-score{font-family:'Fraunces',serif;font-size:3rem;font-weight:600;}
   .rs-meta{display:flex;flex-direction:column;gap:4px;}
   .rs-meta .r-stars{font-size:1.1rem;}
@@ -263,7 +266,7 @@
       <button data-nav="gallery">Gallery</button>
       <button data-nav="reviews">Guest reviews</button>
     </nav>
-    <button class="nav-cta" data-nav="book">Email Tony &amp; Gill</button>
+    <button class="nav-cta" data-nav="book">Enquire now</button>
   </div>
 </div>
 
@@ -275,7 +278,7 @@
       <h1>A stone gîte, a private pool, and <em>two hosts</em> next door.</h1>
       <p class="hero-sub">Tony and Gill converted their barn into a gîte beside their own home, so you're never far from a warm welcome or the ponies wandering the paddock.</p>
       <div class="hero-actions">
-        <button class="btn-primary" data-nav="book">Email Tony &amp; Gill</button>
+        <button class="btn-primary" data-nav="book">Enquire now</button>
         <button class="btn-ghost" data-nav="gite-page">See the gîte →</button>
       </div>
       <div class="hero-meta">
@@ -396,7 +399,7 @@
         <h2>Ready to ask about your week?</h2>
         <p>Send Tony &amp; Gill an email with your dates and they'll come back to you personally, usually within a day.</p>
       </div>
-      <button class="btn-primary" data-nav="book">Email Tony &amp; Gill →</button>
+      <button class="btn-primary" data-nav="book">Enquire now →</button>
     </div>
   </section>
 </main>
@@ -445,7 +448,7 @@
         <h2>Come and meet us properly</h2>
         <p>See the gîte itself, or email us to ask about your dates.</p>
       </div>
-      <button class="btn-primary" data-nav="book">Email Tony &amp; Gill →</button>
+      <button class="btn-primary" data-nav="book">Enquire now →</button>
     </div>
   </section>
 </main>
@@ -490,7 +493,7 @@
   <section class="pricing">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">2025 rates</span>
+        <span class="eyebrow">2026 rates</span>
         <h2>Rental costs by season</h2>
         <p>25% payable on booking, balance due one month before your stay. Returnable damage deposit of £350. Rates include heating, bed linen, gîte and pool towels, and cleaning.</p>
       </div>
@@ -509,7 +512,7 @@
         </table>
       </div>
       <p class="price-note">A local tourist tax of €1.50 per person, per night, is payable separately (set by the French government).</p>
-      <p class="price-note">Looking for 2026 dates? <button class="btn-ghost" style="padding:0;border:none;font-size:inherit;" data-nav="book">Get in touch</button> and we'll confirm current rates.</p>
+      <p class="price-note">Questions about rates or dates? <button class="btn-ghost" style="padding:0;border:none;font-size:inherit;" data-nav="book">Get in touch</button> and we'll confirm everything personally.</p>
     </div>
   </section>
 
@@ -519,7 +522,7 @@
         <h2>See it for the week you have in mind</h2>
         <p>Send a quick email. Tony &amp; Gill will confirm availability directly.</p>
       </div>
-      <button class="btn-primary" data-nav="book">Email Tony &amp; Gill →</button>
+      <button class="btn-primary" data-nav="book">Enquire now →</button>
     </div>
   </section>
 </main>
@@ -560,7 +563,7 @@
         </div>
         <div class="field"><label for="guests">Guests</label><input id="guests" type="number" min="1" max="4" placeholder="2"></div>
         <div class="field"><label for="msg">Message</label><textarea id="msg" placeholder="Anything Tony &amp; Gill should know, such as arrival time, pets question, etc."></textarea></div>
-        <button class="btn-primary" type="submit" style="align-self:flex-start;">Send email</button>
+        <button class="btn-primary" type="submit" style="align-self:flex-start;">Send enquiry</button>
         <p style="font-size:0.82rem;color:var(--ink-soft);">Goes straight to info@lagrangemontante.com</p>
       </form>
     </div>
@@ -616,10 +619,10 @@
   </section>
 
   <section class="wrap reviews-summary">
-    <div class="rs-score">5.0</div>
+    <div class="rs-score">All five stars</div>
     <div class="rs-meta">
       <span class="r-stars">★★★★★</span>
-      <span style="color:var(--ink-soft);font-size:0.9rem;">Across every guest review since 2020, direct and on Airbnb</span>
+      <span style="color:var(--ink-soft);font-size:0.9rem;">Every review so far, here and on Airbnb</span>
     </div>
   </section>
 
@@ -664,10 +667,10 @@
   <section class="cta-band">
     <div class="wrap">
       <div>
-        <h2>Ready to add your own review?</h2>
+        <h2>Thinking of staying with us?</h2>
         <p>Email Tony &amp; Gill with your dates and they'll get back to you personally.</p>
       </div>
-      <button class="btn-primary" data-nav="book">Email Tony &amp; Gill →</button>
+      <button class="btn-primary" data-nav="book">Enquire now →</button>
     </div>
   </section>
 </main>
@@ -680,6 +683,7 @@
       <button data-nav="gite-page">The gîte</button>
       <button data-nav="gallery">Gallery</button>
       <button data-nav="reviews">Guest reviews</button>
+      <button data-nav="book">How to book</button>
       <a href="mailto:info@lagrangemontante.com">info@lagrangemontante.com</a>
     </div>
   </div>
@@ -688,17 +692,24 @@
 <script>
   (function(){
     var pages = document.querySelectorAll('main[data-page]');
-    var navButtons = document.querySelectorAll('[data-nav]');
+    var ids = Array.prototype.map.call(pages, function(p){ return p.getAttribute('data-page'); });
+    var titles = {home:'La Grange Montante',about:'Our story | La Grange Montante','gite-page':'The gîte | La Grange Montante',book:'How to book | La Grange Montante',gallery:'Gallery | La Grange Montante',reviews:'Guest reviews | La Grange Montante'};
     function show(id){
+      if (ids.indexOf(id) < 0) id = 'home';
       pages.forEach(function(p){ p.hidden = p.getAttribute('data-page') !== id; });
       document.querySelectorAll('.navlinks button').forEach(function(b){
         b.classList.toggle('active', b.getAttribute('data-nav') === id);
       });
-      window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+      document.title = titles[id];
+      window.scrollTo(0, 0);
     }
-    navButtons.forEach(function(b){
-      b.addEventListener('click', function(){ show(b.getAttribute('data-nav')); });
+    document.querySelectorAll('[data-nav]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-nav');
+        if (location.hash.slice(1) === id) show(id); else location.hash = id;
+      });
     });
-    show('home');
+    window.addEventListener('hashchange', function(){ show(location.hash.slice(1)); });
+    show(location.hash.slice(1));
   })();
 </script>
